@@ -53,10 +53,12 @@ if st.button('Predict'):
     st.write("Prediction Probabilities:")
     # st.write(prediction_proba)
 
-    prob_0 = round(prediction_proba[0] * 100, 2)
-    prob_1 = round(prediction_proba[1] * 100, 2)
-    prob_2 = round(prediction_proba[2] * 100, 2)
-            
+    # Extract probabilities correctly
+    probs = prediction_proba[0]
+    prob_0 = round(probs[0] * 100, 2)
+    prob_1 = round(probs[1] * 100, 2)
+    prob_2 = round(probs[2] * 100, 2)
+    
     # Plotly Bar Chart for Probabilities
     fig = go.Figure(data=[
         go.Bar(
@@ -71,7 +73,8 @@ if st.button('Predict'):
         title="Prediction Probabilities",
         xaxis_title="Customer Tier",
         yaxis_title="Probability (%)",
-        template="plotly_white"
+        template="plotly_white",
+        yaxis=dict(range=[0, 100])  # Optional: force y-axis to max 100%
     )
     st.plotly_chart(fig)
 
