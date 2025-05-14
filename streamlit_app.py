@@ -4,7 +4,13 @@ import numpy as np
 import pandas as pd
 
 # Load the saved model
-rf_model = joblib.load('rf_model.joblib')
+# rf_model = joblib.load('rf_model.joblib')
+
+try:
+    model = joblib.load('rf_model.joblib')
+except Exception as e:
+    print("Load error:", e)
+
 
 # Streamlit App
 st.title("Random Forest Classifier - Prediction App")
