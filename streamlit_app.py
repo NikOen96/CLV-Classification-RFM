@@ -51,8 +51,7 @@ if st.button('Predict'):
     
     st.write(f"Predicted Class: {predicted_label}")
     st.write("Prediction Probabilities:")
-    st.write(prediction_proba)
-
+    # st.write(prediction_proba)
 
     prob_0 = round(prediction_prob[0] * 100, 2)
     prob_1 = round(prediction_prob[1] * 100, 2)
