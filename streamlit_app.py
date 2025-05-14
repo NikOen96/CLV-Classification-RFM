@@ -36,12 +36,19 @@ def user_input_features():
 
 input_df = user_input_features()
 
+class_labels = {
+    0 : 'Bottom Tier',
+    1 : 'Middle Tier',
+    2 : 'Upper Tier'
+}
+
 # Prediction
 if st.button('Predict'):
     prediction = rf_model.predict(input_df)
     prediction_proba = rf_model.predict_proba(input_df)
+    predicted_label = class_labels.get(prediction[0])
     
-    st.write(f"Predicted Class: {prediction[0]}")
+    st.write(f"Predicted Class: {predicted_label}")
     st.write("Prediction Probabilities:")
     st.write(prediction_proba)
 
