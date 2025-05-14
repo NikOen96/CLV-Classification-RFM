@@ -20,11 +20,11 @@ st.sidebar.header("Input Features")
 
 
 def user_input_features():
-    feature_1 = st.sidebar.number_input("Feature 1", min_value=0.0, value=1.0)
-    feature_2 = st.sidebar.number_input("Feature 2", min_value=0.0, value=2.0)
-    feature_3 = st.sidebar.number_input("Feature 3", min_value=0.0, value=3.0)
-    feature_4 = st.sidebar.number_input("Feature 4", min_value=0.0, value=4.0)
-    feature_5 = st.sidebar.number_input("Feature 5", min_value=0.0, value=5.0)
+    feature_1 = st.sidebar.number_input("Wine Sales ($)", min_value=0.0, value=11.0)
+    feature_2 = st.sidebar.number_input("Meat Sales ($)", min_value=0.0, value=6.0)
+    feature_3 = st.sidebar.number_input("Premium Product Sales ($)", min_value=0.0, value=6.0)
+    feature_4 = st.sidebar.number_input("Sweet Sales ($)", min_value=0.0, value=1.0)
+    feature_5 = st.sidebar.number_input("Fish Sakes ($)", min_value=0.0, value=2.0)
     data = {
         'wines_sales': feature_1,
         'meatproducts_sales': feature_2,
