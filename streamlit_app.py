@@ -7,7 +7,7 @@ import pandas as pd
 # rf_model = joblib.load('rf_model.joblib')
 
 try:
-    model = joblib.load('rf_model.joblib')
+    rf_model = joblib.load('rf_model.joblib')
 except Exception as e:
     print("Load error:", e)
 
