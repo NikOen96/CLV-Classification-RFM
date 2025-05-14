@@ -53,9 +53,9 @@ if st.button('Predict'):
     st.write("Prediction Probabilities:")
     # st.write(prediction_proba)
 
-    prob_0 = round(prediction_prob[0] * 100, 2)
-    prob_1 = round(prediction_prob[1] * 100, 2)
-    prob_2 = round(prediction_prob[2] * 100, 2)
+    prob_0 = round(prediction_proba[0] * 100, 2)
+    prob_1 = round(prediction_proba[1] * 100, 2)
+    prob_2 = round(prediction_proba[2] * 100, 2)
             
     # Plotly Bar Chart for Probabilities
     fig = go.Figure(data=[
