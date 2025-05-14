@@ -29,7 +29,7 @@ def user_input_features():
         'feature_3': feature_3,
         'feature_4': feature_4
     }
-    return pd.DataFrame([data])
+    return pd.Series([data])
 
 input_df = user_input_features()
 
