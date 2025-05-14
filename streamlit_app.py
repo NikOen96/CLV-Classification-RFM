@@ -23,13 +23,15 @@ def user_input_features():
     feature_2 = st.sidebar.number_input("Feature 2", min_value=0.0, value=2.0)
     feature_3 = st.sidebar.number_input("Feature 3", min_value=0.0, value=3.0)
     feature_4 = st.sidebar.number_input("Feature 4", min_value=0.0, value=4.0)
+    feature_5 = st.sidebar.number_input("Feature 5", min_value=0.0, value=5.0)
     data = {
         'feature_1': feature_1,
         'feature_2': feature_2,
         'feature_3': feature_3,
-        'feature_4': feature_4
+        'feature_4': feature_4,
+        'feature_5': feature_5
     }
-    return pd.Series([data])
+    return pd.DataFrame([data])
 
 input_df = user_input_features()
 
