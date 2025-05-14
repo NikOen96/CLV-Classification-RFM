@@ -2,6 +2,7 @@ import streamlit as st
 import joblib
 import numpy as np
 import pandas as pd
+import plotly.graph_objects as go
 
 # Load the saved model
 # rf_model = joblib.load('rf_model.joblib')
@@ -51,4 +52,27 @@ if st.button('Predict'):
     st.write(f"Predicted Class: {predicted_label}")
     st.write("Prediction Probabilities:")
     st.write(prediction_proba)
+
+
+    prob_0 = round(prediction_prob[0] * 100, 2)
+    prob_1 = round(prediction_prob[1] * 100, 2)
+    prob_2 = round(prediction_prob[2] * 100, 2)
+            
+    # Plotly Bar Chart for Probabilities
+    fig = go.Figure(data=[
+        go.Bar(
+            x=[class_labels[0], class_labels[1], class_labels[2]],
+            y=[prob_0, prob_1, prob_2],
+            text=[f"{prob_0}%", f"{prob_1}%", f"{prob_2}%"],
+            textposition='auto',
+            marker=dict(color=['green', 'red', 'blue'])
+        )
+    ])
+    fig.update_layout(
+        title="Prediction Probabilities",
+        xaxis_title="Customer Tier",
+        yaxis_title="Probability (%)",
+        template="plotly_white"
+    )
+    st.plotly_chart(fig)
 
